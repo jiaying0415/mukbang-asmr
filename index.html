@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《喀滋嚼想 CrispyWhisper ASMR》—— 極致沉浸式吃播聲學選品</title>
+  <!-- Google Fonts: Noto Sans TC & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f1117;
+      --bg-card: #181b24;
+      --bg-card-hover: #222634;
+      --primary: #f59e0b;
+      --primary-glow: rgba(245, 158, 11, 0.35);
+      --accent: #ec4899;
+      --accent-glow: rgba(236, 72, 153, 0.3);
+      --cyan: #06b6d4;
+      --cyan-glow: rgba(6, 182, 212, 0.3);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: #2e3547;
+      --card-radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.68;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Ambient Soundwave Background */
+    .ambient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 15% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 85% 70%, rgba(236, 72, 153, 0.08) 0%, transparent 45%),
+                  radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 17, 23, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-logo .sound-wave-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      height: 20px;
+    }
+
+    .brand-logo .sound-wave-icon span {
+      width: 3px;
+      height: 100%;
+      background: var(--primary);
+      border-radius: 3px;
+      animation: soundWave 1.4s infinite ease-in-out alternate;
+    }
+
+    .brand-logo .sound-wave-icon span:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+    .brand-logo .sound-wave-icon span:nth-child(3) { animation-delay: 0.4s; height: 90%; }
+    .brand-logo .sound-wave-icon span:nth-child(4) { animation-delay: 0.6s; height: 40%; }
+
+    @keyframes soundWave {
+      0% { transform: scaleY(0.3); }
+      100% { transform: scaleY(1); }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-nav-order {
+      background: linear-gradient(135deg, var(--primary), #d97706);
+      color: #111;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-nav-order:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px var(--primary-glow);
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .course-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #ffffff 40%, #fcd34d 80%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p.tagline {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      color: #cbd5e1;
+      max-width: 760px;
+      margin: 0 auto 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #e11d48);
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 4px 20px var(--primary-glow);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(245, 158, 11, 0.6);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      padding: 0.9rem 2rem;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Sound Interactive Tester Banner */
+    .sound-tester-card {
+      max-width: 860px;
+      margin: 0 auto 4rem;
+      background: linear-gradient(180deg, rgba(24, 27, 36, 0.95), rgba(15, 17, 23, 0.9));
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: var(--card-radius);
+      padding: 1.75rem 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .sound-tester-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .sound-tester-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      text-align: center;
+      max-width: 650px;
+    }
+
+    .sound-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .btn-crunch {
+      background: #1f2433;
+      border: 1px solid var(--border-color);
+      color: #f3f4f6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-crunch:hover {
+      border-color: var(--primary);
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--primary);
+      transform: scale(1.04);
+    }
+
+    .btn-crunch:active {
+      transform: scale(0.96);
+    }
+
+    /* Section Container */
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Brand Story Grid */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 2rem;
+      }
+    }
+
+    .story-content h3 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1.25rem;
+      line-height: 1.35;
+    }
+
+    .story-content h3 span {
+      color: var(--primary);
+    }
+
+    .story-content p {
+      color: #cbd5e1;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .story-visual {
+      background: radial-gradient(circle at center, #2e3547 0%, #151821 100%);
+      border: 1px dashed rgba(245, 158, 11, 0.4);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .story-stat-badge {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .story-stat-label {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .story-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.75rem;
+      justify-content: center;
+    }
+
+    .story-tag {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    /* Product Cards */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-glow);
+    }
+
+    .product-badge-db {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(15, 17, 23, 0.85);
+      border: 1px solid var(--accent);
+      color: #f472b6;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    .product-img-wrapper {
+      width: 100%;
+      height: 240px;
+      background: #11141d;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-img-icon {
+      font-size: 4.5rem;
+      filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img-icon {
+      transform: scale(1.15) rotate(-3deg);
+    }
+
+    .product-info {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-code {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.3rem;
+    }
+
+    .product-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-specs {
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .product-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .sound-feature-box {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .product-pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.2rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .product-price {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .product-price-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .product-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .btn-preview-sound {
+      background: #252b3b;
+      color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.65rem 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+
+    .btn-preview-sound:hover {
+      background: rgba(236, 72, 153, 0.2);
+      border-color: var(--accent);
+      color: #f472b6;
+    }
+
+    .btn-add-intent {
+      background: linear-gradient(135deg, var(--primary), #d97706);
+      color: #111;
+      border: none;
+      border-radius: 10px;
+      padding: 0.65rem 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+
+    .btn-add-intent:hover {
+      box-shadow: 0 4px 15px var(--primary-glow);
+      transform: translateY(-2px);
+    }
+
+    /* Combo Special Card */
+    .combo-banner {
+      margin-top: 3rem;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(236, 72, 153, 0.15));
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: var(--card-radius);
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .combo-content h4 {
+      font-size: 1.45rem;
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 0.3rem;
+    }
+
+    .combo-content p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .combo-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+    }
+
+    .combo-orig-price {
+      text-decoration: line-through;
+      color: #64748b;
+      font-size: 1.1rem;
+    }
+
+    .combo-special-price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    /* Academic Steps Section (Steps 1 to 6) */
+    .academic-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 2.5rem;
+    }
+
+    .sop-progress-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .sop-step-node {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .sop-step-node.active, .sop-step-node:hover {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .sop-step-node .step-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+
+    .sop-step-node .step-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #f3f4f6;
+      margin-top: 0.2rem;
+    }
+
+    /* Academic Detail Accordion / Cards */
+    .step-card {
+      background: rgba(15, 17, 23, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .step-card:hover {
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .step-card-header {
+      padding: 1.25rem 1.75rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .step-card-header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step-pill {
+      background: var(--primary);
+      color: #111;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .step-card-header h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .step-card-body {
+      padding: 1.75rem;
+    }
+
+    /* Step 1 Pain points */
+    .pain-point-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .pain-point-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 1.2rem;
+    }
+
+    .pain-point-box h5 {
+      color: #f472b6;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pain-point-box p {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    /* Step 2 PESTC */
+    .pestc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .pestc-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .pestc-box .dim {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .pestc-box .name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .pestc-box p {
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+    }
+
+    /* Step 3 Defense */
+    .defense-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 860px) {
+      .defense-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .defense-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .defense-box h5 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .defense-box.highlight {
+      border-color: rgba(6, 182, 212, 0.5);
+      background: rgba(6, 182, 212, 0.05);
+    }
+
+    /* Step 4 SWOT 4-Quadrant */
+    .swot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .swot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .swot-card {
+      border-radius: 12px;
+      padding: 1.4rem;
+      position: relative;
+    }
+
+    .swot-so {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .swot-wo {
+      background: rgba(59, 130, 246, 0.08);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .swot-st {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .swot-wt {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .swot-card h5 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .swot-card p {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    /* Step 5 SMART & 3-Trans */
+    .smart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+    }
+
+    .smart-table th, .smart-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .smart-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .smart-table td.dim-col {
+      font-weight: 800;
+      color: #f3f4f6;
+      width: 140px;
+    }
+
+    .three-trans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .three-trans-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .three-trans-box h5 {
+      color: var(--primary);
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* Step 6 STP & 4P */
+    .stp-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .four-p-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .four-p-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+
+    .four-p-item h6 {
+      color: var(--cyan);
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .four-p-item p {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    /* Pre-Order Section */
+    .order-section {
+      background: radial-gradient(circle at center, #1e2230 0%, #11131a 100%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .order-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .order-form-container {
+      max-width: 680px;
+      margin: 2rem auto 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: left;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-control {
+      width: 100%;
+      background: #0f1117;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      font-size: 0.95rem;
+      color: #fff;
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    .product-select-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0f1117;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .checkbox-item:hover {
+      border-color: var(--primary);
+    }
+
+    .checkbox-item input {
+      margin-right: 0.75rem;
+      accent-color: var(--primary);
+      transform: scale(1.15);
+    }
+
+    .checkbox-item .item-title {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #f3f4f6;
+    }
+
+    .checkbox-item .item-price {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, var(--primary), #e11d48);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .form-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(245, 158, 11, 0.5);
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--primary);
+      border-radius: 18px;
+      padding: 2.5rem;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--primary-glow);
+      text-align: center;
+      animation: modalPop 0.3s ease-out;
+    }
+
+    @keyframes modalPop {
+      0% { transform: scale(0.85); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-box h3 {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-box p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .modal-summary {
+      background: #0f1117;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: left;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-close-btn {
+      background: var(--primary);
+      color: #111;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    /* GitHub Pages Deployment Guide Section */
+    .deploy-section {
+      background: var(--bg-card);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      border-radius: var(--card-radius);
+      padding: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .deploy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+    }
+
+    .deploy-step {
+      background: #0f1117;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .deploy-step-number {
+      width: 32px;
+      height: 32px;
+      background: var(--cyan);
+      color: #000;
+      border-radius: 50%;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .deploy-step h5 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .deploy-step p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      background: #0b0d13;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Sound indicator pill */
+    .sound-active-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-bg"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="brand-logo">
+      <div class="sound-wave-icon">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      喀滋嚼想 CrispyWhisper
+    </a>
+    <ul class="nav-links">
+      <li><a href="#story">品牌故事</a></li>
+      <li><a href="#products">聲學明星商品</a></li>
+      <li><a href="#academic">企劃學理(步驟1-6)</a></li>
+      <li><a href="#deploy">GitHub部署指引</a></li>
+      <li><button class="btn-nav-order" onclick="scrollToOrder()">線上預購登記</button></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="course-badge">
+      <span>🎓 萬能科技大學《創意發想與實踐》期中微型創業專案</span>
+      <span>• 指導教授：邱俊維 博士</span>
+    </div>
+    <h1>極致沉浸吃播 ASMR<br>聽得見的酥脆療癒</h1>
+    <p class="tagline">
+      首創專為吃播閱聽人與聲學創作者調校的「微卡爆音常溫零食」。<br>
+      打破傳統零食油膩與悶音限制，低溫真空凍乾封存 72dB 高頻酥脆，讓每一次咀嚼都是心靈大腦 SPA！
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">
+        <span>🎧 探索 3 款聲學商品</span>
+      </a>
+      <button class="btn-secondary" onclick="scrollToOrder()">
+        <span>📝 搶先登記預購意向（常溫超取 NT$60）</span>
+      </button>
+      <a href="#academic" class="btn-secondary">
+        <span>📊 檢視步驟 1~6 學理分析</span>
+      </a>
+    </div>
+
+    <!-- Sound Interactive Synthesizer Tester -->
+    <div class="sound-tester-card">
+      <div class="sound-tester-title">
+        <span>🔊 即時 ASMR 聲學試聽器（Web Audio 擬真合成）</span>
+        <span class="sound-active-pill">● 聲學調校在線</span>
+      </div>
+      <p class="sound-tester-desc">
+        點擊下方音波按鈕，戴上耳機體驗由 Web Audio 原生合成的「真空凍乾爆裂」、「琥珀糖清脆碎裂」與「羽衣甘藍沙沙音」！
+      </p>
+      <div class="sound-buttons">
+        <button class="btn-crunch" onclick="playCrunchSound('mushroom')">
+          <span>🍄 72dB 凍乾蕈菇爆破音</span>
+        </button>
+        <button class="btn-crunch" onclick="playCrunchSound('amber')">
+          <span>💎 65dB 琥珀糖清脆晶裂音</span>
+        </button>
+        <button class="btn-crunch" onclick="playCrunchSound('kale')">
+          <span>🥬 58dB 羽衣甘藍沙沙風鈴音</span>
+        </button>
+        <button class="btn-crunch" onclick="playCrunchSound('rapid')">
+          <span>⚡ 連續三連擊咀嚼 ASMR</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Brand Story Section -->
+  <section id="story">
+    <div class="section-header">
+      <div class="section-eyebrow">Brand Heritage & Vision</div>
+      <h2 class="section-title">品牌故事：從深夜耳機裡的撫慰，到聲學零食的微型落地</h2>
+      <p class="section-desc">「戴上耳機，隔著螢幕聽著吃播主咬下那一聲清脆的喀滋，是無數靈魂在深夜唯一的避風港。」</p>
+    </div>
+
+    <div class="story-grid">
+      <div class="story-content">
+        <h3>為什麼我們需要一包<span>「有聲音的零食」</span>？</h3>
+        <p>
+          創辦人是一位重度 ASMR 吃播閱聽人與夜間高壓工作者。無數個加班深夜，正是耳機裡那細膩、俐落、充滿腦內愉悅感（Tingle）的咀嚼音，撫平了焦慮。
+        </p>
+        <p>
+          然而，現實中市售零食往往令人失望：洋芋片油膩糊口、餅乾死硬黏牙、麥克風收音沉悶且充滿咀嚼雜音，隨之而來的是滿滿的熱量罪惡感。傳統吃播觀眾永遠「只能看、只能聽，卻吃不到同款聲音」。
+        </p>
+        <p>
+          《喀滋嚼想》因此誕生——我們決定運用微型創業的力量，引進<strong>「低溫真空微膨化技術」</strong>與<strong>「聲學分貝標籤標準」</strong>，剔除人工添加與油脂，將大自然的蕈菇、天然寒天與有機蔬果轉化為每克具備 70dB 穿透力的常溫酥脆點心。讓每位觀眾在開播時，也能咬下與主播同頻共振的極致酥脆！
+        </p>
+      </div>
+
+      <div class="story-visual">
+        <div class="story-stat-badge">72 dB</div>
+        <div class="story-stat-label">黃金高頻清脆爆破峰值</div>
+        <div class="story-tags">
+          <span class="story-tag">#無油真空凍乾</span>
+          <span class="story-tag">#常溫超取60元</span>
+          <span class="story-tag">#低於90大卡</span>
+          <span class="story-tag">#ASMR聲學認證</span>
+          <span class="story-tag">#100%零負擔</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase Section -->
+  <section id="products">
+    <div class="section-header">
+      <div class="section-eyebrow">Signature Acoustic Snacks</div>
+      <h2 class="section-title">三款聲學明星商品卡片</h2>
+      <p class="section-desc">每一款產品皆標註專屬「分貝指數」與「音頻特色」，支援全台常溫超取，伴你度過沉浸療癒夜。</p>
+    </div>
+
+    <div class="product-grid">
+      <!-- Product Card 1 -->
+      <div class="product-card">
+        <div class="product-badge-db">峰值 72 dB</div>
+        <div class="product-img-wrapper">
+          <div class="product-img-icon">🍄</div>
+        </div>
+        <div class="product-info">
+          <div class="product-code">ACOUSTIC ITEM A</div>
+          <h3 class="product-name">【音波爆裂】極脆真空凍乾綜合蕈菇</h3>
+          <div class="product-specs">淨重 45g | 低溫真空微膨化工藝 | 常溫保存 180 天</div>
+          <p class="product-desc">
+            嚴選台灣產銷履歷秀珍菇與杏鮑菇，以 -40°C 真空急凍昇華脫水，形成天然多孔微氣室蜂巢結構。牙齒咬下的第一微秒瞬間崩解，產生乾淨俐落的高頻爆破音，收音極佳不黏牙！
+          </p>
+          <div class="sound-feature-box">
+            <span>🔊</span>
+            <span>聲學特性：3.2kHz 穿透脆響，引發強烈自主神經愉悅</span>
+          </div>
+          <div class="product-pricing-row">
+            <div class="product-price">NT$ 150 <span class="product-price-sub">/ 袋</span></div>
+            <div class="product-price-sub">常溫超取 NT$60</div>
+          </div>
+          <div class="product-actions">
+            <button class="btn-preview-sound" onclick="playCrunchSound('mushroom')">
+              ▶ 試聽喀滋音
+            </button>
+            <button class="btn-add-intent" onclick="quickSelectProduct('itemA')">
+              + 預購登記
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="product-card">
+        <div class="product-badge-db">峰值 65 dB</div>
+        <div class="product-img-wrapper">
+          <div class="product-img-icon">💎</div>
+        </div>
+        <div class="product-info">
+          <div class="product-code">ACOUSTIC ITEM B</div>
+          <h3 class="product-name">【晶瑩碎響】天然琥珀水晶咀嚼糖</h3>
+          <div class="product-specs">淨重 60g | 日本寒天自然風乾結晶 | 常溫保存 90 天</div>
+          <p class="product-desc">
+            吃播經典熱門道具！由純植物寒天與天然果汁製成，耗時 7 天溫和風乾熟成。外表宛如寶石般結出極薄砂糖脆殼，內層為軟糯果凍。外脆內 Q，在麥克風前呈現層次豐富的水晶碎裂音。
+          </p>
+          <div class="sound-feature-box">
+            <span>🔊</span>
+            <span>聲學特性：雙層音色結構（外殼清脆裂開 + 內部水感軟嚼）</span>
+          </div>
+          <div class="product-pricing-row">
+            <div class="product-price">NT$ 130 <span class="product-price-sub">/ 罐</span></div>
+            <div class="product-price-sub">常溫超取 NT$60</div>
+          </div>
+          <div class="product-actions">
+            <button class="btn-preview-sound" onclick="playCrunchSound('amber')">
+              ▶ 試聽喀滋音
+            </button>
+            <button class="btn-add-intent" onclick="quickSelectProduct('itemB')">
+              + 預購登記
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="product-card">
+        <div class="product-badge-db">峰值 58 dB</div>
+        <div class="product-img-wrapper">
+          <div class="product-img-icon">🥬</div>
+        </div>
+        <div class="product-info">
+          <div class="product-code">ACOUSTIC ITEM C</div>
+          <h3 class="product-name">【微卡沙沙】海鹽低溫慢烤羽衣甘藍脆片</h3>
+          <div class="product-specs">淨重 35g | 65°C 低溫風乾脫水 | 單袋低於 88 大卡</div>
+          <p class="product-desc">
+            超級食物輕盈變身！以初榨橄欖油薄噴與喜馬拉雅粉紅岩鹽低溫慢焙。質地薄如秋葉，咬下時產生溫柔而密集的沙沙粉碎聲。深夜解嘴饞完全無罪惡感，是失眠讀書時的最佳伴侶。
+          </p>
+          <div class="sound-feature-box">
+            <span>🔊</span>
+            <span>聲學特性：溫柔白噪音沙沙聲，催眠助眠效果顯著</span>
+          </div>
+          <div class="product-pricing-row">
+            <div class="product-price">NT$ 140 <span class="product-price-sub">/ 袋</span></div>
+            <div class="product-price-sub">常溫超取 NT$60</div>
+          </div>
+          <div class="product-actions">
+            <button class="btn-preview-sound" onclick="playCrunchSound('kale')">
+              ▶ 試聽喀滋音
+            </button>
+            <button class="btn-add-intent" onclick="quickSelectProduct('itemC')">
+              + 預購登記
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Combo Special Offer -->
+    <div class="combo-banner">
+      <div class="combo-content">
+        <h4>🎁【深夜放鬆・聲學三重奏】經典體驗套組</h4>
+        <p>包含：凍乾蕈菇 ×1 + 琥珀糖 ×1 + 羽衣甘藍脆片 ×1，加贈「ASMR 雙耳錄音助眠隱藏音軌」</p>
+      </div>
+      <div class="combo-price-wrap">
+        <span class="combo-orig-price">原價 NT$ 420</span>
+        <span class="combo-special-price">特惠 NT$ 399</span>
+        <button class="btn-nav-order" onclick="quickSelectProduct('combo')">立即預購組合</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Framework Section (Steps 1 to 6) -->
+  <section id="academic">
+    <div class="section-header">
+      <div class="section-eyebrow">Rigorous Academic Foundation</div>
+      <h2 class="section-title">行銷企劃 SOP 步驟 1 至步驟 6 完整學理分析</h2>
+      <p class="section-desc">
+        依據凌政文教授《行銷企劃》經典教材（圖 1-9）與邱俊維博士期中操作手冊，實踐五階段前三階段之微型創業嚴謹因果推論。
+      </p>
+    </div>
+
+    <div class="academic-container">
+      <!-- SOP Process Flow Navigation -->
+      <div class="sop-progress-bar">
+        <div class="sop-step-node active" onclick="scrollToStep('step1')">
+          <div class="step-num">STEP 01</div>
+          <div class="step-label">發掘痛點與創業動機</div>
+        </div>
+        <div class="sop-step-node" onclick="scrollToStep('step2')">
+          <div class="step-num">STEP 02</div>
+          <div class="step-label">PESTC 外部總體分析</div>
+        </div>
+        <div class="sop-step-node" onclick="scrollToStep('step3')">
+          <div class="step-num">STEP 03</div>
+          <div class="step-label">內部資源與假想敵</div>
+        </div>
+        <div class="sop-step-node" onclick="scrollToStep('step4')">
+          <div class="step-num">STEP 04</div>
+          <div class="step-label">SWOT 因果推論四象限</div>
+        </div>
+        <div class="sop-step-node" onclick="scrollToStep('step5')">
+          <div class="step-num">STEP 05</div>
+          <div class="step-label">SMART 目標與三超思維</div>
+        </div>
+        <div class="sop-step-node" onclick="scrollToStep('step6')">
+          <div class="step-num">STEP 06</div>
+          <div class="step-label">STP 定位與 4P 方案</div>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-card" id="step1">
+        <div class="step-card-header">
+          <div class="step-card-header-left">
+            <span class="step-pill">步驟 1</span>
+            <h4>發掘痛點與創業動機（三大核心痛點提煉）</h4>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="pain-point-list">
+            <div class="pain-point-box">
+              <h5>1. 市售零食咀嚼音頻平淡、收音悶鈍油膩</h5>
+              <p>傳統油炸零食含油量高、容易吸潮軟化，吃播主收音時常夾帶含糊咀嚼音與黏牙雜音，缺乏觸發大腦愉悅反應（Tingle）的高頻俐落爆破音。</p>
+            </div>
+            <div class="pain-point-box">
+              <h5>2. 夜間高壓孤獨族群渴望「低負擔聲學療癒」</h5>
+              <p>都會上班族與學生在深夜觀看吃播 ASMR 尋求慰藉，但常規零食熱量動輒 500 大卡且多添加物，缺乏專為「聽覺爆發力」與「健康微卡」兼具的客製選項。</p>
+            </div>
+            <div class="pain-point-box">
+              <h5>3. 跨螢幕感官隔閡，缺乏「同頻共時咀嚼體驗」</h5>
+              <p>吃播觀眾長期處於單向觀看狀態，傳統進口吃播食品取得不易或運費高昂；常溫小包裝能大幅降低首購門檻，讓觀眾與創作者達成「同頻共嚼」的互動儀式。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card" id="step2">
+        <div class="step-card-header">
+          <div class="step-card-header-left">
+            <span class="step-pill">步驟 2</span>
+            <h4>外部總體環境 PESTC 深度分析</h4>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="pestc-grid">
+            <div class="pestc-box">
+              <div class="dim">P</div>
+              <div class="name">政治法律 (Political)</div>
+              <p>衛福部食藥署嚴格規範食品標示與防腐添加物。本企劃堅持 100% 天然食材與無油低溫脫水，公開檢驗報告，將嚴格法規化為信任優勢。</p>
+            </div>
+            <div class="pestc-box">
+              <div class="dim">E</div>
+              <div class="name">經濟環境 (Economic)</div>
+              <p>抗通膨的「療癒小確幸（口紅效應）」盛行。單價 130~150 元的精緻解壓零食極易引發衝動購買，搭配 60 元常溫超商取貨，首購阻力極低。</p>
+            </div>
+            <div class="pestc-box">
+              <div class="dim">S</div>
+              <div class="name">社會文化 (Sociocultural)</div>
+              <p>一人經濟崛起與夜間失眠人口劇增，吃播已轉化為身心療癒與心理陪伴的文化載體，ASMR 成為年輕族群日常舒壓的固定儀式。</p>
+            </div>
+            <div class="pestc-box">
+              <div class="dim">T</div>
+              <div class="name">科技創新 (Technological)</div>
+              <p>真空急凍昇華技術（Freeze-Drying）與高感度雙耳 3D 麥克風普及，使食品結構微孔化達到 70dB 聲學等級，個人創業者亦能精準調校音色。</p>
+            </div>
+            <div class="pestc-box">
+              <div class="dim">C</div>
+              <div class="name">綠色環保 (Conservation)</div>
+              <p>選用在地小農有機蕈菇與在地羽衣甘藍，縮短食物里程碳足跡；包裝採用可回收食品級鋁箔密封袋，落實環境永續友好概念。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card" id="step3">
+        <div class="step-card-header">
+          <div class="step-card-header-left">
+            <span class="step-pill">步驟 3</span>
+            <h4>內部資源盤點與假想敵精準防護</h4>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="defense-grid">
+            <div class="defense-box">
+              <h5>💪 創辦人優勢 (S)</h5>
+              <p>• 熟稔聲音聲學美學與吃播社群語言<br>• 敏捷精實，熟練掌握 AI 輔助與 GitHub Pages 零成本架站<br>• 無實體店面龐大租金負擔</p>
+            </div>
+            <div class="defense-box">
+              <h5>⚠️ 創辦人劣勢 (W)</h5>
+              <p>• 啟動資金微型（3~5 萬元）<br>• 初期產能受限於小批量烘烤與凍乾委外打樣<br>• 缺乏大宗原料採購之議價優勢</p>
+            </div>
+            <div class="defense-box highlight">
+              <h5>🎯 假想敵與定位防護壁壘</h5>
+              <p>
+                <strong>主要假想敵：</strong>大型量販賣場之進口大包裝洋芋片與油炸膨化零食（價格低廉、油脂高、收音悶鈍、化學香精）。<br><br>
+                <strong>我方防護之道：</strong>絕不進行價格肉搏戰！將戰場移轉至<strong>「70dB 聲學分貝標籤」</strong>、<strong>「無油低卡」</strong>與<strong>「吃播同頻儀式」</strong>，建立獨特的聲學藍海護城河。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-card" id="step4">
+        <div class="step-card-header">
+          <div class="step-card-header-left">
+            <span class="step-pill">步驟 4</span>
+            <h4>SWOT 因果推論四象限四部曲綜合矩陣</h4>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="swot-grid">
+            <div class="swot-card swot-so">
+              <h5>🚀 SO 積極開拓策略（發揮優勢 × 掌握機會）</h5>
+              <p>憑藉 72dB 真空凍乾高頻爆破音與常溫超取優勢，發起「#15秒咀嚼爆音挑戰」短影音傳播，快速吸納年輕失眠族與吃播狂粉客群。</p>
+            </div>
+            <div class="swot-card swot-wo">
+              <h5>💡 WO 借力補強策略（克服劣勢 × 善用機會）</h5>
+              <p>針對小規模產能限制，採行「每週定期限量批次出爐」的線上預購登記制，將產能限制成功包裝為「現烘保鮮、珍貴稀缺」的品牌價值。</p>
+            </div>
+            <div class="swot-card swot-st">
+              <h5>🛡️ ST 防禦轉化策略（運用優勢 × 抵禦威脅）</h5>
+              <p>面對同質性手工餅乾模仿，公開產品音頻頻譜圖、分貝數據與 SGS 無油檢驗報告，以專業聲學科學指標構築競爭對手跨不過的品質門檻。</p>
+            </div>
+            <div class="swot-card swot-wt">
+              <h5>🎯 WT 避險聚焦策略（降低劣勢 × 規避威脅）</h5>
+              <p>嚴格控管初期採購品項，專注於「凍乾蕈菇、琥珀糖、羽衣甘藍」三款核心明星單品，避免庫存積壓，確保資金高周轉與健康現金流。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step-card" id="step5">
+        <div class="step-card-header">
+          <div class="step-card-header-left">
+            <span class="step-pill">步驟 5</span>
+            <h4>SMART 企劃目標與三超前瞻思維</h4>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <table class="smart-table">
+            <thead>
+              <tr>
+                <th>SMART 構面</th>
+                <th>期中 30 天量化驗證指標設定</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="dim-col">S (具體性)</td>
+                <td>完成 GitHub Pages 官方品牌網頁發布，展示 3 款聲學零食並開放線上預購意向登記。</td>
+              </tr>
+              <tr>
+                <td class="dim-col">M (可衡量)</td>
+                <td>上線 30 天內達成 300 次以上真實訪客瀏覽，並成功收集 40 份以上真實預購登記意向。</td>
+              </tr>
+              <tr>
+                <td class="dim-col">A (可達成)</td>
+                <td>運用校園社群、Dcard 飲食與 ASMR 專版分享，搭配試吃優惠價，目標穩健切實。</td>
+              </tr>
+              <tr>
+                <td class="dim-col">R (相關性)</td>
+                <td>實質驗證消費者對「聲學級微卡吃播零食」之接受度與常溫超取意願，奠定期末落地數據。</td>
+              </tr>
+              <tr>
+                <td class="dim-col">T (時限性)</td>
+                <td>於學期第八週前完成 GitHub Pages 全球公開部署並提交成果網址。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="three-trans-grid">
+            <div class="three-trans-box">
+              <h5>🌟 超前意識 (Forward-Thinking)</h5>
+              <p>搶先佈局新興「聲學療癒食品（Sonic Food Therapy）」藍海，將飲食從滿足熱量需求提升為大腦情緒撫慰賽道。</p>
+            </div>
+            <div class="three-trans-box">
+              <h5>🔥 超越常規 (Unconventional)</h5>
+              <p>突破傳統零食只標熱量成分的常規，獨創「脆度分貝標籤（Crunch dB Index）」與麥克風調校指南。</p>
+            </div>
+            <div class="three-trans-box">
+              <h5>💖 超越期望 (Exceeding Expectations)</h5>
+              <p>出貨隨盒附贈「雙耳耳機清潔片」與「深夜助眠隱藏版吃播音軌 QR Code」，打造無可取代的超值開箱驚喜。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="step-card" id="step6">
+        <div class="step-card-header">
+          <div class="step-card-header-left">
+            <span class="step-pill">步驟 6</span>
+            <h4>STP 市場定位與 4P 行銷組合</h4>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="stp-box">
+            <h5 style="color:var(--primary); font-size:1.05rem; margin-bottom:0.5rem;">STP 定位宣言：</h5>
+            <p style="color:#f3f4f6; font-size:0.95rem;">
+              鎖定 <strong>18~35 歲重度耳機使用族群、ASMR 吃播愛好者與深夜高壓族</strong>。品牌核心主張：<br>
+              <span style="color:var(--accent); font-weight:800; font-size:1.1rem;">「喀滋嚼想，聽得見的酥脆療癒。」</span>——打造全台第一家專注於聲音爆發力與純淨低卡的聲學吃播零食選品。
+            </p>
+          </div>
+
+          <div class="four-p-grid">
+            <div class="four-p-item">
+              <h6>Product (產品組合)</h6>
+              <p>• 72dB 真空凍乾綜合蕈菇 (45g)<br>• 65dB 天然琥珀水晶糖 (60g)<br>• 58dB 低溫羽衣甘藍脆片 (35g)</p>
+            </div>
+            <div class="four-p-item">
+              <h6>Price (價格策略)</h6>
+              <p>• 單袋 NT$ 130 ~ NT$ 150<br>• 【深夜放鬆三重奏】組合特惠 NT$ 399<br>• 常溫超取運費統一 NT$ 60</p>
+            </div>
+            <div class="four-p-item">
+              <h6>Place (通路布局)</h6>
+              <p>• 個人 GitHub Pages 官方品牌展示站<br>• 串接線上預購表單與 Google 表單<br>• 全台 7-11 / 全家便利商店超取付款</p>
+            </div>
+            <div class="four-p-item">
+              <h6>Promotion (整合推廣)</h6>
+              <p>• 發起「#15秒咀嚼爆音挑戰」短影音<br>• 贈送吃播創作者試吃樣品盲測開箱<br>• 附贈深夜放鬆隱藏版聲學音軌</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Order Intent Registration Form -->
+  <section class="order-section" id="order-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Early Bird Intent Registration</div>
+      <h2 class="section-title">線上預購意向登記（MVP 驗證）</h2>
+      <p class="section-desc">
+        本階段為期中微型創業市場需求驗證，搶先登記者享有首批出爐 85 折優惠與常溫超商取貨優先權！
+      </p>
+    </div>
+
+    <div class="order-form-container">
+      <form id="preOrderForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="userName">您的姓名 / 暱稱 *</label>
+          <input type="text" id="userName" class="form-control" placeholder="例如：林小音" required>
+        </div>
+
+        <div class="form-group">
+          <label for="userPhone">聯絡手機 *（用於超商取貨簡訊）</label>
+          <input type="tel" id="userPhone" class="form-control" placeholder="例如：0912-345-678" pattern="[0-9\-]{9,12}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="storeName">超商取貨門市資訊 *（7-11 或 全家）</label>
+          <input type="text" id="storeName" class="form-control" placeholder="例如：7-11 萬能門市（店號：123456）" required>
+        </div>
+
+        <div class="form-group">
+          <label>請選擇預購品項（可多選）*</label>
+          <div class="product-select-grid">
+            <label class="checkbox-item">
+              <span class="item-title">
+                <input type="checkbox" name="product" value="極脆真空凍乾綜合蕈菇" id="checkA">
+                🍄【音波爆裂】極脆真空凍乾綜合蕈菇 (72dB)
+              </span>
+              <span class="item-price">NT$ 150</span>
+            </label>
+
+            <label class="checkbox-item">
+              <span class="item-title">
+                <input type="checkbox" name="product" value="天然琥珀水晶咀嚼糖" id="checkB">
+                💎【晶瑩碎響】天然琥珀水晶咀嚼糖 (65dB)
+              </span>
+              <span class="item-price">NT$ 130</span>
+            </label>
+
+            <label class="checkbox-item">
+              <span class="item-title">
+                <input type="checkbox" name="product" value="海鹽羽衣甘藍脆片" id="checkC">
+                🥬【微卡沙沙】海鹽低溫羽衣甘藍脆片 (58dB)
+              </span>
+              <span class="item-price">NT$ 140</span>
+            </label>
+
+            <label class="checkbox-item" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.05);">
+              <span class="item-title">
+                <input type="checkbox" name="product" value="深夜放鬆三重奏體驗組" id="checkCombo">
+                🎁【深夜放鬆・三重奏體驗組】(三款各一 + 助眠音軌)
+              </span>
+              <span class="item-price">特惠 NT$ 399</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="userNotes">您的吃播喜好或聲學期待（選填）</label>
+          <textarea id="userNotes" class="form-control" rows="3" placeholder="例如：希望蕈菇爆音更大聲、想知道主播麥克風型號..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit-btn">
+          <span>🚀 送出預購意向登記（享早鳥首發通知）</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- GitHub Deployment Guide Section -->
+  <section id="deploy">
+    <div class="deploy-section">
+      <div class="section-header" style="margin-bottom: 1.5rem;">
+        <div class="section-eyebrow" style="color:var(--cyan);">GitHub Pages Deployment Guide</div>
+        <h3 style="font-size:1.8rem; color:#fff;">期中成果 GitHub Pages 部署四步全攻略</h3>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          依據授課手冊操作指引，將此 <code>index.html</code> 託管於 GitHub Pages 取得全班公開互評網址！
+        </p>
+      </div>
+
+      <div class="deploy-grid">
+        <div class="deploy-step">
+          <div class="deploy-step-number">1</div>
+          <h5>建立公開儲存庫 (Repo)</h5>
+          <p>登入 GitHub，點選右上角「+」➔「New repository」，命名為 <code>mukbang-asmr</code>，務必勾選「Public」與「Add a README file」。</p>
+        </div>
+        <div class="deploy-step">
+          <div class="deploy-step-number">2</div>
+          <h5>上傳 index.html 檔案</h5>
+          <p>進入剛開好的儲存庫頁面，點選「Add file」➔「Upload files」，將本單一 HTML 檔案拖曳進去，按下綠色「Commit changes」按鈕。</p>
+        </div>
+        <div class="deploy-step">
+          <div class="deploy-step-number">3</div>
+          <h5>啟用 GitHub Pages 服務</h5>
+          <p>進入儲存庫上方「Settings」➔ 左側「Pages」，在 Branch 設定中將 <code>None</code> 改選為 <code>main</code>，資料夾維持 <code>/(root)</code>，按「Save」。</p>
+        </div>
+        <div class="deploy-step">
+          <div class="deploy-step-number">4</div>
+          <h5>取得公開發表網址</h5>
+          <p>靜待約 1 分鐘後重新整理頁面，頂部出現綠色提示：<code>https://[你的帳號].github.io/mukbang-asmr/</code>，此即為期中作業繳交網址！</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Modal -->
+  <div class="modal-backdrop" id="successModal">
+    <div class="modal-box">
+      <div class="modal-icon">🎉</div>
+      <h3>預購意向登記成功！</h3>
+      <p>感謝您參與《喀滋嚼想》微型創業期中 MVP 需求驗證！我們已將您的登記資料記錄如下：</p>
+      <div class="modal-summary" id="modalSummaryContent">
+        <!-- Filled by JS -->
+      </div>
+      <button class="modal-close-btn" onclick="closeModal()">確認並關閉</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width:800px; margin: 0 auto;">
+      <p style="font-weight:700; color:#fff; margin-bottom:0.5rem;">
+        萬能科技大學《創意發想與實踐》期中報告成果展示
+      </p>
+      <p style="margin-bottom:1rem;">
+        課程代碼：11501 | 授課教師：邱俊維 博士 | 模式：100% 個人獨立微型創業專案
+      </p>
+      <p style="font-size:0.8rem; color:#6b7280;">
+        專案主題：《吃播asmr》之 喀滋嚼想 (CrispyWhisper ASMR) | 部署平台：GitHub Pages (零伺服器主機成本)
+      </p>
+    </div>
+  </footer>
+
+  <!-- Web Audio Synthesizer & Interactive Script -->
+  <script>
+    // Web Audio API Synthesizer for ASMR Crunch Sounds
+    let audioCtx = null;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    // Play synthesized realistic crunch sounds
+    function playCrunchSound(type) {
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+
+        if (type === 'mushroom') {
+          // Sharp high-frequency burst (72dB crackle)
+          playBurst(ctx, now, 1800, 0.28, 4);
+        } else if (type === 'amber') {
+          // Crystal snapping sound (65dB bright crack)
+          playCrystalSnap(ctx, now);
+        } else if (type === 'kale') {
+          // Soft rustling noise (58dB gentle whisper)
+          playSoftRustle(ctx, now);
+        } else if (type === 'rapid') {
+          // Rapid triple crunch
+          playBurst(ctx, now, 1600, 0.15, 3);
+          playBurst(ctx, now + 0.18, 1900, 0.16, 4);
+          playBurst(ctx, now + 0.36, 1400, 0.22, 5);
+        }
+      } catch (e) {
+        console.warn('Audio playback error:', e);
+      }
+    }
+
+    // High frequency noisy crunch
+    function playBurst(ctx, startTime, filterFreq, duration, clickCount) {
+      for (let i = 0; i < clickCount; i++) {
+        const clickTime = startTime + (Math.random() * 0.08);
+        const bufferSize = ctx.sampleRate * 0.05;
+        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+
+        for (let j = 0; j < bufferSize; j++) {
+          data[j] = (Math.random() * 2 - 1) * Math.exp(-j / (bufferSize * 0.3));
+        }
+
+        const noise = ctx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(filterFreq + (Math.random() * 600 - 300), clickTime);
+        filter.Q.setValueAtTime(3.5, clickTime);
+
+        const gain = ctx.createGain();
+        gain.gain.setValueAtTime(0.7, clickTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, clickTime + 0.05);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(ctx.destination);
+
+        noise.start(clickTime);
+        noise.stop(clickTime + 0.05);
+      }
+    }
+
+    // Crystal glassy snap
+    function playCrystalSnap(ctx, startTime) {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(2600, startTime);
+      osc.frequency.exponentialRampToValueAtTime(600, startTime + 0.08);
+
+      gain.gain.setValueAtTime(0.4, startTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.08);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(startTime);
+      osc.stop(startTime + 0.09);
+
+      // Followed by slight noise crackle
+      playBurst(ctx, startTime + 0.02, 3200, 0.12, 3);
+    }
+
+    // Soft rustle
+    function playSoftRustle(ctx, startTime) {
+      const bufferSize = ctx.sampleRate * 0.25;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+
+      for (let j = 0; j < bufferSize; j++) {
+        data[j] = (Math.random() * 2 - 1) * 0.3;
+      }
+
+      const noise = ctx.createBufferSource();
+      noise.buffer = buffer;
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'highpass';
+      filter.frequency.setValueAtTime(3800, startTime);
+
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.01, startTime);
+      gain.gain.linearRampToValueAtTime(0.25, startTime + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.25);
+
+      noise.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+
+      noise.start(startTime);
+      noise.stop(startTime + 0.25);
+    }
+
+    // Scroll helpers
+    function scrollToOrder() {
+      document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToStep(stepId) {
+      const el = document.getElementById(stepId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Quick select from product cards
+    function quickSelectProduct(type) {
+      scrollToOrder();
+      if (type === 'itemA') {
+        document.getElementById('checkA').checked = true;
+      } else if (type === 'itemB') {
+        document.getElementById('checkB').checked = true;
+      } else if (type === 'itemC') {
+        document.getElementById('checkC').checked = true;
+      } else if (type === 'combo') {
+        document.getElementById('checkCombo').checked = true;
+      }
+      playCrunchSound('mushroom');
+    }
+
+    // Form Handling
+    function handleFormSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('userName').value;
+      const phone = document.getElementById('userPhone').value;
+      const store = document.getElementById('storeName').value;
+      const notes = document.getElementById('userNotes').value || '無額外備註';
+
+      const checkedItems = [];
+      const checkboxes = document.querySelectorAll('input[name="product"]:checked');
+      checkboxes.forEach(cb => checkedItems.push(cb.value));
+
+      if (checkedItems.length === 0) {
+        alert('請至少勾選一項預購品項喔！');
+        return;
+      }
+
+      // Play success ASMR audio
+      playCrunchSound('rapid');
+
+      // Populate Modal
+      const summary = `
+        <p><strong>顧客姓名：</strong> ${escapeHtml(name)}</p>
+        <p><strong>取貨電話：</strong> ${escapeHtml(phone)}</p>
+        <p><strong>取貨門市：</strong> ${escapeHtml(store)}</p>
+        <p><strong>預購品項：</strong> ${escapeHtml(checkedItems.join('、'))}</p>
+        <p><strong>備註說明：</strong> ${escapeHtml(notes)}</p>
+        <p style="margin-top:0.5rem; color:#f59e0b; font-size:0.8rem;">
+          ※ 此為期中 MVP 意向驗證紀錄，我們已為您優先保留首批名額！
+        </p>
+      `;
+
+      document.getElementById('modalSummaryContent').innerHTML = summary;
+      document.getElementById('successModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('successModal').classList.remove('active');
+      document.getElementById('preOrderForm').reset();
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.innerText = text;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
